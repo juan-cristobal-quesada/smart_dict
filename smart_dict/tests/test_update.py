@@ -50,5 +50,20 @@ class TestSmartDict(unittest.TestCase):
         smd1.smart_update_add(smd3)
         self.assertTrue(len(smd1[3][4]) == 2)
         pprint.pprint(smd1)
+    
+    def testBasicTypesSetReplace(self):
+        smd1 = SmartDict()
+        smd1.smart_set_replace('hello','girl','bye')
+        smd1.smart_set_replace('hello','girl','good')
+        smd1.smart_set_replace('hello','girl', 'boy', ['fine'])
+        smd1.smart_set_replace('hello','girl', 'boy', 'just')
+        import pprint
+        pprint.pprint(smd1)
+        smd1.smart_set_replace('hello','girl', 'boy', ['arrghh'])
+        pprint.pprint(smd1)
+        smd1.smart_set_replace('hello','girl','boy', {'some' : 'stuff'})
+        pprint.pprint(smd1)
+        smd1.smart_set_replace('hello','girl','boy', {'some' : 'new_stuff'})
+        pprint.pprint(smd1)
 if __name__ == '__main__':
     unittest.main()

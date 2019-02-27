@@ -26,7 +26,7 @@ class SmartDict(dict):
             new_args.append(o)
             self.smart_set_add(*new_args)
         else:
-            self.smart_update_add(self,o)
+            self.smart_update_add(o)
     
     def smart_set_replace(self,*args):
     
