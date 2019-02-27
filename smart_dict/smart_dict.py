@@ -45,9 +45,9 @@ class SmartDict(dict):
         
         if new_args:
             new_args.append(o)
-            self.smart_set_add(*new_args)
+            self.smart_set_replace(*new_args)
         else:
-            self.smart_set_replace(self,o)
+            self.smart_update_replace(o)
     
     def smart_update_add(self, other):
         smart_functions.smart_update_add(self, other)
